@@ -1,0 +1,119 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "土鍋タイマー",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "startDonabeTimer",
+          "slots": [],
+          "samples": [
+            "donabe",
+            "土鍋タイマーをセット"
+          ]
+        },
+        {
+          "name": "CaptureRiceAmountIntent",
+          "slots": [
+            {
+              "name": "RiceAmount",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{RiceAmount} 合でお願いします",
+            "{RiceAmount} 合",
+            "{RiceAmount} 合お願いします",
+            "{RiceAmount} 合です",
+            "{RiceAmount} 合炊きます"
+          ]
+        },
+        {
+          "name": "StartCook",
+          "slots": [],
+          "samples": [
+            "沸騰したよ",
+            "蓋を閉めたよ",
+            "炊き始めたよ"
+          ]
+        },
+        {
+          "name": "CreateReminderIntent",
+          "slots": [],
+          "samples": [
+            "リマを作成"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureRiceAmountIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "RiceAmount",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1320887559818.330169797849"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1320887559818.330169797849",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "炊くのは何合ですか？"
+          },
+          {
+            "type": "PlainText",
+            "value": "何合炊きますか？"
+          },
+          {
+            "type": "PlainText",
+            "value": "何合？"
+          },
+          {
+            "type": "PlainText",
+            "value": "何合ですか？"
+          },
+          {
+            "type": "PlainText",
+            "value": "何合か教えてください"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "13"
+}
